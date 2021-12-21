@@ -36,9 +36,9 @@ const Navbar = () => {
   return (
     <div className="nav-container">
       <div className="logo-container">
-        <Avatar src={icon} size="large" />
+        <Avatar src={icon} size="large" style={{background:"black"}}/>
         <Typography.Title level={2} className="logo">
-          <Link to="/">CryptoWorld</Link>
+          <Link to="/" style={{color:"#0071bd"}}>CryptoWorld</Link>
         </Typography.Title>
         <Button
           className="menu-control-container"
@@ -48,8 +48,8 @@ const Navbar = () => {
         </Button>
       </div>
       {activeMenu && (
-        <Menu theme="dark">
-          <Menu.Item icon={<HomeOutlined />}>
+        <Menu theme="dark" style={{background:"#101820FF"}}>
+          <Menu.Item icon={<HomeOutlined />} >
             <Link to="/">Home</Link>
           </Menu.Item>
           <Menu.Item icon={<FundOutlined />}>
