@@ -1,8 +1,8 @@
 {
   "name": "cryptoverse",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://crypto-world-h1qnmfjg5-urvish2510.vercel.app/",
   "dependencies": {
     "@ant-design/icons": "^4.6.4",
     "@reduxjs/toolkit": "^1.6.1",
