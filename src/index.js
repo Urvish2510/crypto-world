@@ -10,7 +10,7 @@ import "antd/dist/antd.css";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router basename="/index.html">
+    <Router>
       <Provider store={store}>
         <App />
       </Provider>
