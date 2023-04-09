@@ -23,7 +23,7 @@ const Homepage = () => {
       </Title>
       <Row gutter={[32, 32]}>
         <Col span={12}>
-          <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
+          <Statistic title="Total Cryptocurrencies" value={globalStats?.total} />
         </Col>
         <Col span={12}>
           <Statistic
@@ -44,7 +44,7 @@ const Homepage = () => {
           />
         </Col>
         <Col span={12}>
-          <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
+          <Statistic title="Total Cryptocurrencies" value={globalStats?.total} />
         </Col>
         <Col span={12}>
           <Statistic
