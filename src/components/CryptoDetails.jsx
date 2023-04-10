@@ -12,7 +12,6 @@ import {
   TrophyOutlined,
   CheckOutlined,
   NumberOutlined,
-  ThunderboltOutlined,
 } from "@ant-design/icons";
 
 import {
@@ -34,6 +33,7 @@ const CryptoDetails = () => {
     timeperiod,
   });
   const cryptoDetails = data?.data?.coin;
+  console.log(coinHistory);
 
   if (isFetching) return <Loader />;
 
@@ -46,11 +46,6 @@ const CryptoDetails = () => {
       icon: <DollarCircleOutlined />,
     },
     { title: "Rank", value: cryptoDetails.rank, icon: <NumberOutlined /> },
-    {
-      title: "24h Volume",
-      value: `$ ${cryptoDetails.volume && millify(cryptoDetails.volume)}`,
-      icon: <ThunderboltOutlined />,
-    },
     {
       title: "Market Cap",
       value: `$ ${cryptoDetails.marketCap && millify(cryptoDetails.marketCap)}`,
@@ -85,12 +80,14 @@ const CryptoDetails = () => {
     },
     {
       title: "Total Supply",
-      value: `$ ${millify(cryptoDetails.totalSupply)}`,
+      value: cryptoDetails.supply.total
+        ? `$ ${millify(cryptoDetails.supply.total)}`
+        : "undefined",
       icon: <ExclamationCircleOutlined />,
     },
     {
       title: "Circulating Supply",
-      value: `$ ${millify(cryptoDetails.circulatingSupply)}`,
+      value: `$ ${millify(cryptoDetails.supply.circulating)}`,
       icon: <ExclamationCircleOutlined />,
     },
   ];
@@ -132,8 +129,8 @@ const CryptoDetails = () => {
               as the base and quote currency, the rank, and trading volume.
             </p>
           </Col>
-          {stats.map(({ icon, title, value }) => (
-            <Col className="coin-stats">
+          {stats.map(({id, icon, title, value }) => (
+            <Col key={id} className="coin-stats">
               <Col className="coin-stats-name">
                 <Text>{icon}</Text>
                 <Text>{title}</Text>
