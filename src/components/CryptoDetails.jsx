@@ -33,7 +33,6 @@ const CryptoDetails = () => {
     timeperiod,
   });
   const cryptoDetails = data?.data?.coin;
-  console.log(coinHistory);
 
   if (isFetching) return <Loader />;
 
